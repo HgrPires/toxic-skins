@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --bg-color: var(--bg-color) #101113;
+  --text-color: #fff;
+  --main-color: #39ff14;
+  --outro-color: #fcfcfc;
+}
+body {
+  background-color: #222; /* Cor de fundo do cabeçalho */
+  color: #fff; /* Cor do texto */
+  font-family: courier;
+  margin: 0; /* Remover margens padrão */
+  padding: 0; /* Remover preenchimento padrão */
+  overflow-x: hidden; /* Impedir a rolagem horizontal */
+}
+header {
+  background-color: #101113; /* Cor de fundo escura */
+  padding: 10px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 2%;
+}
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.logo i {
+  margin-right: 20px;
+}
+.navegacao {
+  display: flex;
+}
+.navegacao a {
+  color: var(--outro-color);
+  font-size: 20px;
+  margin: 0 50px;
+}
+.navegacao a:hover {
+  color: var(--main-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra suave */
+}
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+#menu {
+  color: var(--text-color);
+  z-index: 10001;
+  cursor: pointer;
+  align-items: center;
+}
+.header-icons i {
+  margin-right: 40px;
+  font-size: 60px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.header-icons i:hover {
+  transform: translateY(-5px);
+  color: var(--main-color);
+}
+/* Estilo para as categorias */
+body {
+  background-color: #222; /* Cor de fundo escura */
+  color: #39ff14; /* Cor do texto */
+}
+
+/* Estilo para o cabeçalho */
+.header {
+  background-color: #222; /* Cor de fundo do cabeçalho */
+  padding: 10px;
+}
+
+/* Estilo para o logo */
+.logo img {
+  max-width: 100px;
+}
+
+/* Estilo para as categorias */
+.categorias {
+  color: #888;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Exibe as categorias em uma linha */
+}
+
+.categoria {
+  font-size: 14px;
+  margin: 150px;
+  margin-top: 1%;
+  cursor: pointer;
+  margin-right: 20px;
+  position: relative;
+  align-items: center;
+}
+.categoria:hover {
+  transform: translateY(-5px);
+  color: #fff; /* Cor dos links ao passar o mouse */
+  transition: color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+}
+.opcoes {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  top: 100%; /* Posicione abaixo da categoria */
+  left: 0;
+  background-color: #444;
+  display: none; /* Oculta as opções por padrão */
+}
+/* Estilo para as opções das categorias */
+.opcoes a {
+  text-decoration: none;
+  color: #fff; /* Cor do texto das opções */
+  display: block; /* Mostra as opções em uma coluna */
+  padding: 5px;
+}
+.opcoes a:hover {
+  color: #39ff14; /* Cor dos links ao passar o mouse */
+  transition: color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+  opacity: 0.7; /* Reduz a opacidade ao passar o mouse */
+  margin-left: 10px; /* Espaçamento entre o texto e o ícone */ /* Sublinhar o texto quando passa o mouse */
+}
+
+/* Estilo para a barra de pesquisa */
+.barra-pesquisa {
+  margin-top: 10%;
+  margin-left: 30%;
+  position: absolute;
+  align-items: center;
+  background-color: #444; /* Cor de fundo da barra de pesquisa */
+  border-radius: 7px; /* Borda arredondada */
+}
+
+.barra-pesquisa input[type="text"] {
+  width: 400px;
+  padding: 20px;
+  border: none;
+  background-color: #555; /* Cor de fundo do campo de pesquisa */
+  color: #fff;
+  border-radius: 10px;
+}
+
+.filtro-preco {
+  width: 200px;
+  margin-right: 10px;
+  padding: 20px;
+  background-color: #555; /* Cor de fundo do menu suspenso */
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.filtro-preco option {
+  background-color: #555; /* Cor de fundo das opções do menu suspenso */
+}
+
+.filtro-preco:hover {
+  cursor: pointer;
+}
+
+.filtro-preco:focus {
+  outline: none; /* Remover a borda quando o menu suspenso está selecionado */
+}
+
+.menu-suspenso {
+  margin: 10px;
+  margin-right: 10px;
+  margin-left: 15px;
+  padding: 20px;
+  background-color: #555; /* Cor de fundo do menu suspenso */
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.menu-suspenso option {
+  background-color: #555; /* Cor de fundo das opções do menu suspenso */
+}
+
+.menu-suspenso:hover {
+  cursor: pointer;
+}
+
+.menu-suspenso:focus {
+  outline: none; /* Remover a borda quando o menu suspenso está selecionado */
+}
+
+/* Estilo para o botão de pesquisa */
+button {
+  padding: 12px 30px;
+  background-color: #39ff14; /* Cor de fundo do botão */
+  color: #333; /* Cor do texto do botão */
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #fff; /* Cor de fundo do botão quando passa o mouse */
+  color: #333;
+}
+
+/* Estilo para o link de pesquisa por nome */
+.barra-pesquisa a {
+  text-decoration: none;
+  color: #ffcc00; /* Cor do link de pesquisa por nome */
+}
+
+.barra-pesquisa a:hover {
+  text-decoration: underline; /* Sublinhar o link quando passa o mouse */
+}
+.categoria-container {
+  margin-top: 10px; /* Margem superior entre as categorias */
+  background-color: #333; /* Cor de fundo escura para o retângulo */
+  padding: 10px; /* Espaçamento interno para o conteúdo da categoria */
+  border-radius: 5px 5px 0 0; /* Borda arredondada, apenas na parte superior */
+  transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+.icone {
+  display: flex;
+  flex-direction: column;
+  width: 40px; /* Aumentando a largura */
+  cursor: pointer;
+}
+
+.barra {
+  width: 40px; /* Aumentando a largura */
+  height: 6px; /* Aumentando a altura */
+  background-color: #39ff14; /* Cor das barras */
+  margin: 4px 0; /* Espaçamento entre as barras */
+  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.icone:hover .barra:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  height: 5px; /* Aumentando a altura */
+}
+
+.icone:hover .barra:nth-child(2) {
+  transform: scaleX(0);
+}
+
+.icone:hover .barra:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  height: 5px; /* Aumentando a altura */
+}

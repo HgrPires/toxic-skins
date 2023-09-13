@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venda de Skin de AK-47</title>
+  </head>
+  <body>
+    <!-- Conteúdo do site -->
+    <h1>Venda de Skin de AK-47</h1>
+    <p>Preço: R$20</p>
+
+    <!-- Botão de pagamento do C6 Bank -->
+    <form action="https://www.c6bank.com.br/checkout" method="post">
+      <input
+        type="hidden"
+        name="receiver_email"
+        value="higorpires073@gmail.com"
+      />
+      <!-- Substitua pelo seu e-mail C6 Bank -->
+      <input type="hidden" name="item_name" value="Skin de AK-47" />
+      <input type="hidden" name="amount" value="20.00" />
+      <input type="hidden" name="currency_code" value="BRL" />
+      <input type="hidden" name="button_subtype" value="services" />
+      <input type="hidden" name="no_note" value="0" />
+      <input type="hidden" name="tax_rate" value="0.000" />
+      <input type="hidden" name="shipping" value="0.00" />
+      <input type="hidden" name="bn" value="C6Bank_BuyNow" />
+      <input type="submit" value="Comprar com C6 Bank" />
+    </form>
+  </body>
+</html>

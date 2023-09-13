@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>toxicgg</title>
+  </head>
+  <header>
+<div class="logo">
+    <img src="TOXICLOGO2.png" alt="Logo">
+</div>
+
+<form id="formSelecao" action="#" method="post">
+    <!-- O restante do seu código aqui -->
+</form>
+      <ul class="navegacao">
+    
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Vender</a></li>
+        <li><a href="#">Termos</a></li>
+        <li><a href="#">Como comprar</a></li>
+      </ul>
+      <!--navegaçao-->
+      <div class="header-icons">
+        <a href="loginn.html">
+          <i class="bx bx-user-check"></i>
+      </a>
+        <div class="icone">
+          <div class="barra"></div>
+          <div class="barra"></div>
+          <div class="barra"></div>
+        </div>
+      </div>
+      <!--header-icons-->
+    </header>
+ 
+    <div id="banner">
+      <img src="Play (7).png" alt="Imagem 1">
+      <img src="Play (3).png" alt="Imagem 2">
+      <!-- Adicione mais imagens conforme necessário -->
+  </div>
+    <div class="main"></div>
+    <script>
+      function slider(anything) {
+        document.querySelector(".one").scr = anything;
+      }
+      let menu = document.querySelector("#menu-icon");
+      let navbar = document.querySelector(".navbar");
+      menu.onclick = () => {
+        menu.classList.toggle("bx-x");
+        navb;
+      };
+    </script><!--AQUIIIIII TERMINA-->
+    
+    <ul class="categorias">
+      <!-- Categoria 1 -->
+      <li class="categoria" onclick="toggleOptions('categoria1')">
+          <h2>   Faca   </h2>
+          <ul class="opcoes" id="categoria1">
+              <li><a href="catfacas.html">Todas</a></li>
+          </ul>
+      </li>
+      <!-- Categoria 2 -->
+      <li class="categoria" onclick="toggleOptions('categoria2')">
+          <h2>   Rifle    </h2>
+          <ul class="opcoes" id="categoria2">
+            <li><a href="catrifles.html">Todos</a></li>
+              <li><a href="catak47.html">AK-47</a></li>
+              <li><a href="catrifles.html">M4A1-S</a></li>
+              <li><a href="catrifles.html">M4A4</a></li>
+          </ul>
+      </li>
+      <li class="categoria" onclick="toggleOptions('categoria3')">
+        <h2>Rifle de Precisão</h2>
+        <ul class="opcoes" id="categoria3">
+          <li><a href="catriflepreci.html">Todos</a></li>
+            <li><a href="catriflepreci.html">Awp</a></li>
+            <li><a href="catriflepreci.html">SSG 08</a></li>
+        </ul>
+    </li>
+    <li class="categoria" onclick="toggleOptions('categoria4')">
+      <h2>Pistola</h2>
+      <ul class="opcoes" id="categoria4">
+        <li><a href="catpistol.html">Todas</a></li>
+          <li><a href="catpistol.html">USP-S</a></li>
+          <li><a href="catpistol.html">Desert Eagle</a></li>
+          <li><a href="catpistol.html">Glock-18</a></li>
+      </ul>
+  </li>
+  <!-- Categoria 5 -->
+<li class="categoria" onclick="toggleOptions('categoria5')">
+  <h2>Submetralhadora</h2>
+  <ul class="opcoes" id="categoria5">
+    <li><a href="catsub.html">Todas</a></li>
+      <li><a href="catsub.html">MAC-10</a></li>
+      <li><a href="catsub.html">MP7</a></li>
+      <li><a href="catsub.html">MP9</a></li>
+      
+  </ul>
+</li>
+<!-- Categoria 6 -->
+<li class="categoria" onclick="toggleOptions('categoria6')">
+  <h2>Escopeta</h2>
+  <ul class="opcoes" id="categoria6">
+      <li><a href="catescopeta.html">Todos</a></li>
+  </ul>
+</li>
+<!-- Categoria 7 -->
+<li class="categoria" onclick="toggleOptions('categoria7')">
+  <h2>Luvas</h2>
+  <ul class="opcoes" id="categoria7">
+      <li><a href="catluvas.html">Todos</a></li>
+  </ul>
+</li>
+<!-- Categoria 8 -->
+<li class="categoria" onclick="toggleOptions('categoria8')">
+  <h2>Metralhadora</h2>
+  <ul class="opcoes" id="categoria8">
+      <li><a href="catmetralhadora.html">Todos</a></li>
+  </ul>
+</li>
+  <!-- Barra de Pesquisa -->
+  <div class="barra-pesquisa">
+      <!-- Menu Suspenso -->
+      <select class="menu-suspenso" onchange="selecionarCategoria(this.value)">
+          <option value="todos">Todos os itens</option>
+          <option value="agente">Agente</option>
+          <option value="faca">Faca</option>
+          <option value="escopeta">Escopeta</option>
+          <option value="rifle">Rifle</option>
+          <option value="mac">MAC</option>
+          <option value="m4">M4</option>
+      </select>
+      
+      <!-- Campo de Pesquisa por Nome -->
+      <input type="text" placeholder="Pesquisar por nome">
+      
+      <!-- Filtro de Preço -->
+      <select class="filtro-preco">
+          <option value="menor">Menor Preço</option>
+          <option value="maior">Maior Preço</option>
+      </select>
+      
+      <button onclick="realizarPesquisa()">Pesquisar</button>
+  </div>
+  <body>
+    <!-- Conteúdo do site -->
+
+</body>
+<script>
+// Função para alternar a visibilidade das opções
+function toggleOptions(id) {
+  const opcoes = document.querySelectorAll('.opcoes');
+  opcoes.forEach(opcao => {
+      if (opcao.id === id) {
+          opcao.style.display = opcao.style.display === 'block' ? 'none' : 'block';
+      } else {
+          opcao.style.display = 'none';
+      }
+  });
+}
+
+// Função para realizar a pesquisa
+function realizarPesquisa() {
+  const termoPesquisa = document.querySelector('.barra-pesquisa input[type="text"]').value;
+  const filtroPreco = document.querySelector('.filtro-preco').value;
+  const categoriaSelecionada = document.querySelector('.menu-suspenso').value;
+  
+  // Aqui você pode implementar a lógica para realizar a pesquisa
+  // e aplicar os filtros de menor preço, maior preço, nome e categoria.
+  // Você pode usar os valores de termoPesquisa, filtroPreco e categoriaSelecionada para isso.
+}
+</script>
+<script>
+  const banner = document.getElementById('banner');
+  const images = banner.querySelectorAll('img');
+  let currentIndex = 0;
+  
+  function changeImage() {
+      images[currentIndex].style.opacity = 0;
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].style.opacity = 1;
+  }
+
+  // Iniciar a troca automática de imagens a cada 3 segundos
+  setInterval(changeImage, 7000);
+
+  // Alterar a imagem quando o mouse é arrastado
+  banner.addEventListener('mousemove', changeImage);
+</script>
+<footer>
+  <ul class="social-icons">
+      <li><a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://store.steampowered.com/" target="_blank"><i class="fab fa-steam"></i></a></li>
+      <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      
+      <!-- Adicione mais redes sociais conforme necessário -->
+  </ul>
+  <p>Siga-nos nas redes sociais</p>
+  <p>&copy; 2023 Meu Site</p>
+</footer>
+</body>
+
+</html>

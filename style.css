@@ -1,0 +1,470 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Define a altura mínima igual à altura da viewport */
+  padding-bottom: 100px; /* Adiciona espaço na parte inferior */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --bg-color: var(--bg-color) #101113;
+  --text-color: #fff;
+  --main-color: #00ff88;
+  --outro-color: #fcfcfc;
+}
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: courier;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+header {
+  background-color: #101113;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+  padding: 0;
+  margin: 0;
+  align-items: center; /* Centraliza as categorias verticalmente */
+  flex-wrap: wrap; /* Permite que as categorias quebrem para a próxima linha em telas menores */
+  max-width: 100%; /* Garante que as categorias não ultrapassem a tela */
+
+  white-space: nowrap; /* Impede que as categorias quebrem em várias linhas */
+}
+.logo {
+  position: absolute;
+  top: 7px;
+  left: 20px;
+}
+.logo i {
+  margin-right: 20px;
+}
+.navegacao {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #888;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  flex-wrap: wrap; /* Permite que as categorias quebrem para a próxima linha em telas menores */
+  max-width: 100%; /* Garante que as categorias não ultrapassem a tela */
+  white-space: nowrap; /* Impede que as categorias quebrem em várias linhas */
+}
+.navegacao a {
+  color: var(--outro-color);
+  font-size: 13px;
+  margin: 0 20px; /* Reduzido o espaçamento nas margens para telas menores */
+  font-family: "BlinkMacSystemFont", -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+@media (max-width: 768px) {
+  .navegacao a {
+    font-size: 10px; /* Reduz o tamanho da fonte em telas menores */
+  }
+}
+.navegacao a:hover {
+  color: var(--main-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra suave */
+}
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+#menu {
+  color: var(--text-color);
+  z-index: 10001;
+  cursor: pointer;
+  align-items: center;
+}
+.bx.bx-user-check {
+  color: #00ff88;
+}
+.header-icons a {
+  margin-right: 20%;
+  margin-top: 7%;
+  font-size: 2vw;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.header-icons i:hover {
+  transform: translateY(-5px);
+  color: var(--main-color);
+}
+.header {
+  background-color: #222; /* Cor de fundo do cabeçalho */
+}
+
+/* Estilo para o logo */
+.logo img {
+  max-width: 6vw;
+}
+/* Estilo para as categorias */
+.categorias {
+  color: #888;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centraliza as categorias horizontalmente */
+  align-items: center; /* Centraliza as categorias verticalmente */
+  flex-wrap: wrap; /* Permite que as categorias quebrem para a próxima linha em telas menores */
+  max-width: 100%; /* Garante que as categorias não ultrapassem a tela */
+  overflow: auto; /* Adiciona uma barra de rolagem horizontal caso as categorias não caibam na tela */
+  white-space: nowrap; /* Impede que as categorias quebrem em várias linhas */
+}
+
+.categoria {
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+  margin: 1%; /* Espaçamento entre as categorias */
+  cursor: pointer;
+  padding: 10px 20px; /* Espaçamento interno para o conteúdo da categoria */
+  border: 1px solid #444; /* Adiciona uma borda */
+  border-radius: 5px;
+  text-align: center; /* Centraliza o texto horizontalmente */
+  transition: transform 0.3s, color 0.3s, background-color 0.3s; /* Adiciona transições suaves */
+}
+
+.categoria:hover {
+  transform: translateY(-5px);
+  color: #fff; /* Cor dos links ao passar o mouse */
+  background-color: #444; /* Cor de fundo ao passar o mouse */
+}
+
+.opcoes {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  top: 100%; /* Posicione abaixo da categoria */
+  left: 0;
+  background-color: #444;
+  display: none; /* Oculta as opções por padrão */
+}
+/* Estilo para as opções das categorias */
+.opcoes a {
+  text-decoration: none;
+  color: #fff; /* Cor do texto das opções */
+  display: block; /* Mostra as opções em uma coluna */
+  padding: 5px;
+}
+.opcoes a:hover {
+  color: #39ff14; /* Cor dos links ao passar o mouse */
+  transition: color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+  opacity: 0.7; /* Reduz a opacidade ao passar o mouse */
+  margin-left: 10px; /* Espaçamento entre o texto e o ícone */ /* Sublinhar o texto quando passa o mouse */
+}
+
+/* Estilo para a barra de pesquisa */
+.barra-pesquisa {
+  margin-top: 10%;
+  margin-left: auto; /* Centraliza horizontalmente na tela */
+  margin-right: auto; /* Centraliza horizontalmente na tela */
+  padding: 20px;
+  background-color: #444; /* Cor de fundo da barra de pesquisa */
+  border-radius: 7px; /* Borda arredondada */
+  max-width: 100%; /* Garante que a barra de pesquisa não ultrapasse a tela */
+  overflow: auto; /* Adiciona uma barra de rolagem horizontal caso o conteúdo não caiba na tela */
+}
+
+.barra-pesquisa input[type="text"] {
+  width: 25%; /* Ocupa toda a largura da barra de pesquisa */
+  padding: 20px;
+  border: none;
+  background-color: #555; /* Cor de fundo do campo de pesquisa */
+  color: #fff;
+  border-radius: 10px;
+}
+
+.filtro-preco {
+  width: 200px;
+  margin-right: 10px;
+  padding: 20px;
+  background-color: #555; /* Cor de fundo do menu suspenso */
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.filtro-preco option {
+  background-color: #555; /* Cor de fundo das opções do menu suspenso */
+}
+
+.filtro-preco:hover {
+  cursor: pointer;
+}
+
+.filtro-preco:focus {
+  outline: none; /* Remover a borda quando o menu suspenso está selecionado */
+}
+
+.menu-suspenso {
+  margin-right: 10px;
+  margin-left: 15px;
+  padding: 20px;
+  background-color: #555; /* Cor de fundo do menu suspenso */
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.menu-suspenso option {
+  background-color: #555; /* Cor de fundo das opções do menu suspenso */
+}
+
+.menu-suspenso:hover {
+  cursor: pointer;
+}
+
+.menu-suspenso:focus {
+  outline: none; /* Remover a borda quando o menu suspenso está selecionado */
+}
+
+/* Estilo para o botão de pesquisa */
+button {
+  padding: 12px 30px;
+  color: #333; /* Cor do texto do botão */
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+  box-shadow: 0px 10px 40px #00000056;
+}
+
+button:hover {
+  background-color: #fff; /* Cor de fundo do botão quando passa o mouse */
+  color: #333;
+}
+
+/* Estilo para o link de pesquisa por nome */
+.barra-pesquisa a {
+  text-decoration: none;
+  color: #ffcc00; /* Cor do link de pesquisa por nome */
+}
+
+.barra-pesquisa a:hover {
+  text-decoration: underline; /* Sublinhar o link quando passa o mouse */
+}
+.categoria-container {
+  margin-top: 10px; /* Margem superior entre as categorias */
+  background-color: #333; /* Cor de fundo escura para o retângulo */
+  padding: 10px; /* Espaçamento interno para o conteúdo da categoria */
+  border-radius: 5px 5px 0 0; /* Borda arredondada, apenas na parte superior */
+  transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+.icone {
+  display: flex;
+  flex-direction: column;
+  width: 40px; /* Aumentando a largura */
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.barra {
+  width: 30px; /* Aumentando a largura */
+  height: 4px; /* Aumentando a altura */
+  background-color: #00ff88; /* Cor das barras */
+  margin: 4px 0; /* Espaçamento entre as barras */
+  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.icone:hover .barra:nth-child(1) {
+  transform: translateY(15px) rotate(45deg);
+  height: 5px; /* Aumentando a altura */
+}
+
+.icone:hover .barra:nth-child(2) {
+  transform: scaleX(0);
+}
+
+.icone:hover .barra:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+  height: 5px; /* Aumentando a altura */
+}
+#banner {
+  width: 100%;
+  height: 18vw; /* Altura do banner */
+  overflow: hidden;
+  position: relative;
+}
+
+#banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Adicione quantas imagens desejar */
+#banner img:nth-child(1) {
+  opacity: 1;
+}
+/* Estilize o rodapé */
+/* Estilize o rodapé */
+.content {
+  /* Adicione estilos para o conteúdo principal do seu site aqui */
+  padding: 20px;
+}
+
+/* Estilize o rodapé */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  /* Fixa o rodapé na parte inferior da página */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: "BlinkMacSystemFont", -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+/* Estilize os ícones das redes sociais */
+.social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+.main-login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #201b2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-login {
+  width: 50vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* deixar embaixo mesmo usando display flex */
+}
+.left-login h1 {
+  font-size: 3vw;
+  color: #77ffc0;
+}
+.left-login-img {
+  width: 35vw;
+}
+.right-login {
+  width: 50vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-login {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #2f2841;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+}
+.card-login > h1 {
+  color: #00ff88;
+  font-weight: 300;
+  margin: 0;
+}
+.textfield {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.textfield input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #514869;
+  color: #f0ffffde;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
+.textfield label {
+  color: #f0ffffde;
+  margin-bottom: 10px;
+}
+.textfield > input::placeholder {
+  color: #f0ffff94;
+}
+.btn-login {
+  width: 30%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: #2b134b;
+  background: #00ff88;
+  box-shadow: 0px 10px 40px -12px #00ff88;
+}
+@media only screen and (max-width: 950px) {
+  .card-login {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .main-login {
+    flex-direction: column;
+  }
+  .left-login h1 {
+    display: none;
+  }
+  .left-login {
+    width: 100%;
+    height: auto;
+  }
+  .right-login {
+    width: 100%;
+    height: auto;
+  }
+  .left-login-img {
+    width: 70vw;
+  }
+  .card-login {
+    width: 90%;
+  }
+}
