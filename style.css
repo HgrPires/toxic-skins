@@ -84,8 +84,23 @@ header {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra suave */
 }
 .header-icons {
-  display: flex;
-  align-items: center;
+  position: relative;
+  display: inline-block;
+  margin-right: 3vw;
+  margin-top: 5px;
+}
+
+.opcoes-login {
+  display: none;
+  position: absolute;
+  top: 100%; /* Posiciona as opções abaixo do ícone */
+  right: 0;
+  border: 1px solid #fff;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 2; /* Valor maior para ficar em cima do banner */
 }
 #menu {
   color: var(--text-color);
@@ -94,23 +109,19 @@ header {
   align-items: center;
 }
 .bx.bx-user-check {
-  color: #00ff88;
+  color: #fff;
 }
 .header-icons a {
-  margin-right: 20%;
-  margin-top: 7%;
-  font-size: 2vw;
+  margin-bottom: 4px;
+  font-size: 200%;
   cursor: pointer;
   transition: all 0.5s ease;
+  display: flex;
 }
 .header-icons i:hover {
   transform: translateY(-5px);
   color: var(--main-color);
 }
-.header {
-  background-color: #222; /* Cor de fundo do cabeçalho */
-}
-
 /* Estilo para o logo */
 .logo img {
   max-width: 6vw;
@@ -126,7 +137,6 @@ header {
   align-items: center; /* Centraliza as categorias verticalmente */
   flex-wrap: wrap; /* Permite que as categorias quebrem para a próxima linha em telas menores */
   max-width: 100%; /* Garante que as categorias não ultrapassem a tela */
-  overflow: auto; /* Adiciona uma barra de rolagem horizontal caso as categorias não caibam na tela */
   white-space: nowrap; /* Impede que as categorias quebrem em várias linhas */
 }
 
@@ -173,29 +183,27 @@ header {
 
 /* Estilo para a barra de pesquisa */
 .barra-pesquisa {
-  margin-top: 10%;
-  margin-left: auto; /* Centraliza horizontalmente na tela */
-  margin-right: auto; /* Centraliza horizontalmente na tela */
-  padding: 20px;
-  background-color: #444; /* Cor de fundo da barra de pesquisa */
-  border-radius: 7px; /* Borda arredondada */
-  max-width: 100%; /* Garante que a barra de pesquisa não ultrapasse a tela */
-  overflow: auto; /* Adiciona uma barra de rolagem horizontal caso o conteúdo não caiba na tela */
+  max-width: 80%; /* Garante que as categorias não ultrapassem a tela */
+  white-space: nowrap;
+  text-align: center;
+  padding: 0px;
+  background-color: #444;
+  border-radius: 7px;
+  max-width: 100%;
 }
-
 .barra-pesquisa input[type="text"] {
-  width: 25%; /* Ocupa toda a largura da barra de pesquisa */
+  width: 40%; /* Ocupa toda a largura da barra de pesquisa */
   padding: 20px;
   border: none;
-  background-color: #555; /* Cor de fundo do campo de pesquisa */
+  background-color: #555;
   color: #fff;
   border-radius: 10px;
 }
 
 .filtro-preco {
-  width: 200px;
+  width: 25vw;
   margin-right: 10px;
-  padding: 20px;
+  padding: 1vw;
   background-color: #555; /* Cor de fundo do menu suspenso */
   border: none;
   color: #fff;
@@ -239,7 +247,7 @@ header {
 /* Estilo para o botão de pesquisa */
 button {
   padding: 12px 30px;
-  color: #333; /* Cor do texto do botão */
+  color: #fff; /* Cor do texto do botão */
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -249,7 +257,7 @@ button {
 
 button:hover {
   background-color: #fff; /* Cor de fundo do botão quando passa o mouse */
-  color: #333;
+  color: #000;
 }
 
 /* Estilo para o link de pesquisa por nome */
@@ -267,35 +275,6 @@ button:hover {
   padding: 10px; /* Espaçamento interno para o conteúdo da categoria */
   border-radius: 5px 5px 0 0; /* Borda arredondada, apenas na parte superior */
   transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
-}
-.icone {
-  display: flex;
-  flex-direction: column;
-  width: 40px; /* Aumentando a largura */
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-.barra {
-  width: 30px; /* Aumentando a largura */
-  height: 4px; /* Aumentando a altura */
-  background-color: #00ff88; /* Cor das barras */
-  margin: 4px 0; /* Espaçamento entre as barras */
-  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
-}
-
-.icone:hover .barra:nth-child(1) {
-  transform: translateY(15px) rotate(45deg);
-  height: 5px; /* Aumentando a altura */
-}
-
-.icone:hover .barra:nth-child(2) {
-  transform: scaleX(0);
-}
-
-.icone:hover .barra:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-  height: 5px; /* Aumentando a altura */
 }
 #banner {
   width: 100%;
@@ -465,6 +444,159 @@ footer {
     width: 70vw;
   }
   .card-login {
+    width: 90%;
+  }
+}
+.catalogo {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20%;
+  padding: 20px;
+}
+.skin {
+  background-color: #101113;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  max-width: 250px;
+}
+
+.skin img {
+  max-width: 100%;
+}
+
+button {
+  background-color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00ff88;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+.main-cadastro {
+  width: 100vw;
+  height: 100vh;
+  background-color: #201b2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-cadastro {
+  width: 50vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* deixar embaixo mesmo usando display flex */
+}
+.left-cadastro h1 {
+  font-size: 3vw;
+  color: #77ffc0;
+}
+.left-cadastro-img {
+  width: 35vw;
+}
+.right-cadastro {
+  width: 50vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-cadastro {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #2f2841;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+}
+.card-cadastro > h1 {
+  color: #00ff88;
+  font-weight: 300;
+  margin: 0;
+}
+.textfield {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.textfield input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #514869;
+  color: #f0ffffde;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
+.textfield label {
+  color: #f0ffffde;
+  margin-bottom: 10px;
+}
+.textfield > input::placeholder {
+  color: #f0ffff94;
+}
+.btn-cadastro {
+  width: 30%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: #2b134b;
+  background: #00ff88;
+  box-shadow: 0px 10px 40px -12px #00ff88;
+}
+@media only screen and (max-width: 950px) {
+  .card-cadastro {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .main-cadastro {
+    flex-direction: column;
+  }
+  .left-cadastro h1 {
+    display: none;
+  }
+  .left-cadastro {
+    width: 100%;
+    height: auto;
+  }
+  .right-cadastro {
+    width: 100%;
+    height: auto;
+  }
+  .left-cadastro-img {
+    width: 70vw;
+  }
+  .card-cadastro {
     width: 90%;
   }
 }

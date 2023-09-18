@@ -18,7 +18,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="toxic3.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Qrz6aHDvGxRl0Tz+G6FkgmXI7/i6E9yrA7byCpYljsMfWJpLTMw2b8Dgmj1ekfb2uE6k/YbJcgv4Mxtmjsd4cQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>toxicgg</title>
   </head>
   <header>
@@ -38,16 +40,20 @@
       </ul>
       <!--navegaçao-->
       <div class="header-icons">
-        <a href="loginn.html">
-          <i class="bx bx-user-check"></i>
-      </a>
-        <div class="icone">
-          <div class="barra"></div>
-          <div class="barra"></div>
-          <div class="barra"></div>
+        <a href="#" id="icone">
+            <i class="bx bx-user-check"></i>
+        </a>
+        <div class="opcoes-login" id="opcoes-login">
+          <a href="loginn.html">
+            <button id="bt-login">Login</button>
+          </a>
+          <a href="cadastro.html">
+            <button id="bt-cadastrar">Cadastrar</button>
+          </a>
         </div>
-      </div>
+    </div>
       <!--header-icons-->
+      
     </header>
  
     <div id="banner">
@@ -67,7 +73,6 @@
         navb;
       };
     </script><!--AQUIIIIII TERMINA-->
-    
     <ul class="categorias">
       <!-- Categoria 1 -->
       <li class="categoria" onclick="toggleOptions('categoria1')">
@@ -134,6 +139,7 @@
   <ul class="opcoes" id="categoria8">
       <li><a href="catmetralhadora.html">Todos</a></li>
   </ul>
+</ul>
 </li>
   <!-- Barra de Pesquisa -->
   <div class="barra-pesquisa">
@@ -159,10 +165,35 @@
       
       <button onclick="realizarPesquisa()">Pesquisar</button>
   </div>
-  <body>
-    <!-- Conteúdo do site -->
+  <div class="catalogo">
+    <!-- Skin 1 -->
+    <div class="skin">
+        <img src="skin1.jpg" alt="Skin 1">
+        <h2>Skin 1</h2>
+        <p>Raridade: Comum</p>
+        <p>Preço: $10.00</p>
+        <button onclick="adicionarAoCarrinho('Skin 1', 10.00)">Adicionar ao Carrinho</button>
+    </div>
 
-</body>
+    <!-- Skin 2 -->
+    <div class="skin">
+        <img src="skin2.jpg" alt="Skin 2">
+        <h2>Skin 2</h2>
+        <p>Raridade: Incomum</p>
+        <p>Preço: $15.00</p>
+        <button onclick="adicionarAoCarrinho('Skin 2', 15.00)">Adicionar ao Carrinho</button>
+    </div>
+    <!-- Adicione mais skins aqui -->
+</div>
+
+<div class="carrinho">
+    <h2>Carrinho de Compras</h2>
+    <ul id="carrinho-lista">
+        <!-- Itens do carrinho serão exibidos aqui -->
+    </ul>
+    <p>Total: $<span id="carrinho-total">0.00</span></p>
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+</div>
 <script>
 // Função para alternar a visibilidade das opções
 function toggleOptions(id) {
@@ -201,7 +232,6 @@ function realizarPesquisa() {
   // Iniciar a troca automática de imagens a cada 3 segundos
   setInterval(changeImage, 7000);
 
-  // Alterar a imagem quando o mouse é arrastado
   banner.addEventListener('mousemove', changeImage);
 </script>
 <footer>
@@ -216,6 +246,53 @@ function realizarPesquisa() {
   <p>Siga-nos nas redes sociais</p>
   <p>&copy; 2023 Meu Site</p>
 </footer>
+<script>
+  // Variáveis para o carrinho
+const carrinho = [];
+let total = 0;
+
+// Função para adicionar um item ao carrinho
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    total += preco;
+    atualizarCarrinho();
+}
+
+// Função para atualizar a exibição do carrinho
+function atualizarCarrinho() {
+    const carrinhoLista = document.getElementById('carrinho-lista');
+    const carrinhoTotal = document.getElementById('carrinho-total');
+    
+    carrinhoLista.innerHTML = '';
+    carrinho.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nome} - $${item.preco.toFixed(2)}`;
+        carrinhoLista.appendChild(li);
+    });
+
+    carrinhoTotal.textContent = total.toFixed(2);
+}
+
+// Função para finalizar a compra (pode ser implementada)
+function finalizarCompra() {
+    // Implemente a funcionalidade de finalizar a compra aqui
+    alert('Compra finalizada! Total: $' + total.toFixed(2));
+}
+
+// Pode adicionar mais skins e funcionalidades conforme necessário
+</script>
+<script>
+  const icone = document.getElementById('icone');
+const opcoesLogin = document.getElementById('opcoes-login');
+
+icone.addEventListener('click', () => {
+    if (opcoesLogin.style.display === 'block') {
+        opcoesLogin.style.display = 'none';
+    } else {
+        opcoesLogin.style.display = 'block';
+    }
+});
+</script>
 </body>
 
 </html>
