@@ -631,3 +631,98 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #00ff88;
 }
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px; /* Espaço entre os itens */
+  margin-top: 4%;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+.item h2 {
+  margin-top: 15px;
+  font-size: 70%;
+}
+.item p {
+  font-size: 70%;
+  color: #acacac;
+}
+.ppreco {
+  color: #fff;
+  margin-top: 20px;
+}
+.ppreco p {
+  margin-bottom: 15px;
+}
+.item img {
+  max-width: 10vw; /* Defina a largura máxima desejada em pixels */
+  height: auto; /* Mantém a proporção original da imagem */
+}
+/* Estilize os ícones como desejar */
+.item .steam-icon,
+.item .info-icon {
+  font-size: 160%; /* Tamanho do ícone */
+  color: #00ff88; /* Cor do ícone */
+  cursor: pointer;
+  transition: color 0.3s; /* Efeito de transição de cor */
+  position: absolute;
+  margin-bottom: 20px;
+}
+
+.item .steam-icon {
+  right: 40%;
+  bottom: 20%;
+}
+
+.item .info-icon {
+  left: 40%;
+  bottom: 20%;
+}
+
+.item .steam-icon:hover,
+.item .info-icon:hover {
+  color: #77ffc0; /* Cor do ícone ao passar o mouse */
+}
+/* Estilize as imagens menores e os valores */
+.item .small-images {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item .small-image {
+  flex: 1;
+  margin-top: -2vw;
+  margin-right: 10px;
+  margin-bottom: 2vw;
+}
+
+.item .small-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.item .small-image p {
+  font-weight: bold;
+  font-size: 70%;
+}
+/* Estilize o ícone de exclamação arredondado */
+.rounded-exclamation {
+  display: flex;
+  position: absolute;
+  background-color: #fff; /* Cor de fundo (vermelho) */
+  color: #000; /* Cor do ícone (branco) */
+  font-size: 30px; /* Tamanho do ícone */
+  width: 20px; /* Largura do ícone */
+  height: 20px; /* Altura do ícone */
+  border-radius: 50%; /* Tornar o ícone arredondado */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  line-height: 22px;
+}
