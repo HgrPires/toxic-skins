@@ -753,3 +753,15 @@ footer {
 .cart-container h2 {
   color: #00ff88;
 }
+.copy-button {
+  color: #00ff88;
+}
+.copy-button:active {
+  background-color: #299a00; /* Cor do fundo ao ser clicado */
+}
+.buy-button {
+  color: #00ff88;
+}
+.buy-button:active {
+  background-color: #299a00; /* Cor do fundo ao ser clicado */
+}
