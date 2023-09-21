@@ -166,9 +166,17 @@
       
       <button onclick="realizarPesquisa()">Pesquisar</button>
   </div>
-  <div class="cart-container">
-
-</div>
+    <div class="cart-container">
+      <div class="cart">
+        <h2>Carrinho</h2>
+        <ul class="cart-items">
+          <!-- Itens do carrinho serão adicionados aqui -->
+        </ul>
+        <p class="total">Total: R$ <span id="total-price">0.00</span></p>
+        <button class="buy-button">Comprar via WhatsApp</button>
+        <button class="copy-button">Copiar Pedido</button>
+      </div>
+    </div>
     <div class="catalog">
         <!-- Item 1 -->
         <div class="item">
@@ -201,8 +209,8 @@
               <i class="bx bxl-steam"></i>
           </a>
           <div class="ppreco">
-            <p2 >R$49.99</p2>
-              <p>Preço Steam: $59.99</p>
+            <p2 class="preco-total">R$18.89</p2>
+              <p>Preço Steam: $13.78</p>
           </div>
           <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
@@ -536,7 +544,41 @@
         </div>
         <button class="add-to-cart">Adicionar ao Carrinho</button>
         </div>
+        <div class="item">
+          <h2>TESTTTTTTTTTTT (★) | Polígono</h2>
+          <p>Testada em Campo</p>
+          <img src="imagens/awpfalhadecontencao.png" alt="Pistola 1">
+          <!-- Adicione as imagens menores e valores -->
+          <div class="small-images">
+            <div class="small-image">
+                <img src="imagens/opticgaminglondres2018.png" alt="Adesivo 1">
+                <p>R$15.03</p>
+            </div>
+            <div class="small-image">
+                <img src="imagens/opticgaminglondres2018.png" alt="Adesivo 2">
+                <p>R$9.01</p>
+            </div>
+            <div class="small-image">
+                <img src="imagens/opticgaminglondres2018.png" alt="Adesivo 3">
+                <p>R$6.52</p>
+            </div>
+            <div class="small-image">
+                <img src="imagens/opticgaminglondres2018.png" alt="Adesivo 4">
+                <p>R$19.82</p>
+            </div>
+        </div>
+          <a href="https://steamcommunity.com/id/hgrobrabo/inventory/#730_2_33165759871" class="steam-icon" title="Ver na Steam">
+              <i class="bx bxl-steam"></i>
+          </a>
+          <div class="ppreco">
+            <p class="preco-total">R$ 19.99</p>
+            <p>Preço Steam: R$529,00</p>
+        </div>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
+        </div>
     </div>
+    
+</div>
 
 
 <script>
@@ -606,6 +648,101 @@ icone.addEventListener('click', () => {
         opcoesLogin.style.display = 'block';
     }
 });
+</script>
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+      const cartContainer = document.querySelector(".cart-container");
+      const cartItemsList = document.querySelector(".cart-items");
+      const totalCartPrice = document.getElementById("total-price");
+      const addToCartButtons = document.querySelectorAll(".add-to-cart");
+      const buyButton = document.querySelector(".buy-button");
+      const copyButton = document.querySelector(".copy-button");
+
+      let totalPrice = 0;
+      const carrinho = [];
+
+      const showCart = () => {
+        cartContainer.style.display = "block";
+      };
+
+      const hideCart = () => {
+        cartContainer.style.display = "none";
+      };
+
+      const updateTotalPrice = () => {
+        totalPrice = carrinho.reduce((acc, item) => acc + item.valor, 0);
+        totalCartPrice.textContent = totalPrice.toFixed(2);
+      };
+
+      addToCartButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const nomeItem = button.parentElement.querySelector("h2").textContent;
+          const valorItem = parseFloat(
+            button.parentElement.querySelector(".preco-total").textContent.replace("R$", "").trim()
+          );
+
+          carrinho.push({ nome: nomeItem, valor: valorItem });
+
+          const listItem = document.createElement("li");
+          listItem.textContent = `${nomeItem} - R$ ${valorItem.toFixed(2)}`;
+
+          const removeButton = document.createElement("button");
+          removeButton.textContent = "Remover";
+          removeButton.classList.add("remove-item");
+          removeButton.addEventListener("click", function () {
+            const index = carrinho.findIndex((item) => item.nome === nomeItem);
+            if (index !== -1) {
+              carrinho.splice(index, 1);
+              listItem.remove();
+              updateTotalPrice();
+              if (carrinho.length === 0) {
+                hideCart();
+              }
+            }
+          });
+
+          listItem.appendChild(removeButton);
+          cartItemsList.appendChild(listItem);
+
+          updateTotalPrice();
+          showCart(); // Mostrar carrinho quando um item for adicionado
+        });
+      });
+
+      buyButton.addEventListener("click", function () {
+        // Adicione aqui o código para enviar a mensagem via WhatsApp
+        const numeroTelefone = "62992919352"; // Substitua pelo seu número do WhatsApp
+        let mensagem = "Olá, gostaria de fazer um pedido com os seguintes itens:\n";
+
+        for (const item of carrinho) {
+          mensagem += `- ${item.nome}: R$ ${item.valor.toFixed(2)}\n`;
+        }
+
+        mensagem += `\nTotal da compra: R$ ${totalPrice.toFixed(2)}`;
+
+        const linkWhatsApp = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent(mensagem)}`;
+        window.open(linkWhatsApp, "_blank");
+      });
+
+      copyButton.addEventListener("click", function () {
+        let mensagem = "Olá, gostaria de fazer um pedido com os seguintes itens:\n";
+
+        for (const item of carrinho) {
+          mensagem += `- ${item.nome}: R$ ${item.valor.toFixed(2)}\n`;
+        }
+
+        mensagem += `\nTotal da compra: R$ ${totalPrice.toFixed(2)}`;
+
+        const textarea = document.createElement("textarea");
+        textarea.value = mensagem;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        alert("Pedido copiado para a área de transferência!");
+      });
+    });
 </script>
 </body>
 

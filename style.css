@@ -746,3 +746,10 @@ footer {
   font-size: 70%;
   position: absolute;
 }
+/* Estilos para o carrinho */
+.cart-container {
+  color: #fff;
+}
+.cart-container h2 {
+  color: #00ff88;
+}
