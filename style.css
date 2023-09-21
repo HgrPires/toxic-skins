@@ -21,7 +21,7 @@ body {
   --outro-color: #fcfcfc;
 }
 body {
-  background-color: #222;
+  background-color: #000;
   color: #fff;
   font-family: courier;
   margin: 0;
@@ -196,13 +196,13 @@ header {
 
 /* Estilo para a barra de pesquisa */
 .barra-pesquisa {
-  max-width: 80%; /* Garante que as categorias não ultrapassem a tela */
   white-space: nowrap;
   text-align: center;
+  margin-left: 15%;
   padding: 0px;
   background-color: #444;
   border-radius: 7px;
-  max-width: 100%;
+  max-width: 70%;
 }
 .barra-pesquisa input[type="text"] {
   width: 40%; /* Ocupa toda a largura da barra de pesquisa */
@@ -637,16 +637,42 @@ footer {
   grid-template-columns: repeat(6, 1fr);
   gap: 20px; /* Espaço entre os itens */
   margin-top: 4%;
+  max-width: 100%; /* Limita a largura do catálogo */
+  overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se necessário */
+}
+
+/* Quando a largura da tela for menor que 768px (tamanho típico de tela de celular) */
+@media (max-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(1, 1fr); /* Define 2 colunas por linha */
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+    margin: 10px;
+  }
+  .item img {
+    height: px; /* Mantém a proporção original da imagem */
+    position: absolute;
+  }
+
+  .barra-pesquisa {
+    display: none; /* Oculta a barra de pesquisa em telas menores que 768px */
+  }
 }
 
 .item {
   border: 1px solid #ccc;
-  padding: 20px;
+  padding: 10px;
+  background-color: #222; /* Cor de fundo mais escura para os itens */
+  padding: 20px; /* Espaçamento interno para a sombra */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Sombra esverdeada para os itens */
   text-align: center;
   position: relative;
 }
+/* Brilho verde sutil por dentro dos itens */
+.item:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 1.3); /* Sombra esverdeada por fora dos itens */
+}
+
 .item h2 {
-  margin-top: 15px;
   font-size: 70%;
 }
 .item p {
@@ -656,34 +682,39 @@ footer {
 .item .preco-total p {
   color: #fff;
   margin-top: 20px;
+  position: absolute;
 }
 .ppreco p {
+  position: absolute;
   margin-bottom: 15px;
   position: relative;
 }
 .item img {
   max-width: 10vw; /* Defina a largura máxima desejada em pixels */
-  height: auto; /* Mantém a proporção original da imagem */
+  position: static;
 }
 /* Estilize os ícones como desejar */
 .item .steam-icon,
 .item .info-icon {
-  font-size: 160%; /* Tamanho do ícone */
   color: #00ff88; /* Cor do ícone */
   cursor: pointer;
   transition: color 0.3s; /* Efeito de transição de cor */
-  position: absolute;
   margin-bottom: 20px;
+  position: absolute;
 }
 
 .item .steam-icon {
   right: 40%;
   bottom: 20%;
+  font-size: 140%; /* Tamanho do ícone */
+  position: static;
+  display: block;
 }
 
 .item .info-icon {
-  left: 40%;
-  bottom: 20%;
+  right: 10%;
+  font-size: 170%; /* Tamanho do ícone */
+  position: absolute;
 }
 
 .item .steam-icon:hover,
@@ -698,32 +729,20 @@ footer {
 
 .item .small-image {
   flex: 1;
-  margin-top: -2vw;
+  margin-top: 1vw;
   margin-right: 10px;
   margin-bottom: 2vw;
 }
 
 .item .small-image img {
   max-width: 100%;
+  position: static;
   height: auto;
 }
 
 .item .small-image p {
   font-weight: bold;
+  margin: 7px;
   font-size: 70%;
-}
-/* Estilize o ícone de exclamação arredondado */
-.rounded-exclamation {
-  display: flex;
   position: absolute;
-  background-color: #fff; /* Cor de fundo (vermelho) */
-  color: #000; /* Cor do ícone (branco) */
-  font-size: 30px; /* Tamanho do ícone */
-  width: 20px; /* Largura do ícone */
-  height: 20px; /* Altura do ícone */
-  border-radius: 50%; /* Tornar o ícone arredondado */
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  line-height: 22px;
 }

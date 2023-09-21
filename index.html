@@ -72,6 +72,7 @@
         menu.classList.toggle("bx-x");
         navb;
       };
+    
     </script><!--AQUIIIIII TERMINA-->
     <ul class="categorias">
       <!-- Categoria 1 -->
@@ -171,6 +172,9 @@
     <div class="catalog">
         <!-- Item 1 -->
         <div class="item">
+          <a href="link_para_informacoes_adicionais.html" class="info-icon" title="Etiqueta de nome: FLUXO">
+            <i class="bx bx-info-circle"></i>
+        </a>
           <h2>AK-47 | Tons de Preto</h2>
           <p>Bem Desgastada</p>
           <img src="imagens/aktonsp.png" alt="Pistola 1">
@@ -195,9 +199,6 @@
           </div>
           <a href="https://steamcommunity.com/id/hgrobrabo/inventory/#730_2_33165759871" class="steam-icon" title="Ver na Steam">
               <i class="bx bxl-steam"></i>
-          </a>
-          <a href="link_para_informacoes_adicionais.html" class="info-icon" title="Etiqueta de nome: FLUXO">
-              <i class="bx bx-info-circle"></i>
           </a>
           <div class="ppreco">
             <p2 >R$49.99</p2>
@@ -402,7 +403,7 @@
         <div class="item">
             <h2>M4A1-S | Nitro</h2>
             <p>Testada em Campo</p>
-             <img src="imagens/m4a1snitro.png" alt="Pistola 1">
+             <img src="imagens/m4a1nitroo.png" alt="Pistola 1">
              <!-- Adicione as imagens menores e valores -->
              <div class="small-images">
                  <div class="small-image">
@@ -594,7 +595,18 @@ function realizarPesquisa() {
 <script>
   
   </script>
-
+  <!-- AQUI E ONDE APARECE AS OPÇOES QUANDO EU CLICO NO ICONE DE REGISTRO -->
+<script>
+  const icone = document.getElementById('icone');
+const opcoesLogin = document.getElementById('opcoes-login');
+icone.addEventListener('click', () => {
+    if (opcoesLogin.style.display === 'block') {
+        opcoesLogin.style.display = 'none';
+    } else {
+        opcoesLogin.style.display = 'block';
+    }
+});
+</script>
 </body>
 
 </html>
